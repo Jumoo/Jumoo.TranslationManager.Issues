@@ -3,6 +3,17 @@ List of changes for releases of Translation Manager v8 - for Umbraco.
 
 Detailed release note at https://jumoo.co.uk/translate/release 
 
+## v8.5.2 - 2021-03-10
+
+### Fixes
+- UI Improvements
+  - no cancel during provider process
+  - improved refresh of pending / submitted after job
+  - better selection checkbox UI
+
+### Features
+- XLIFF 1.2 Splitting support
+
 ## v8.5.0 - 2021-01-27
 
 ### Fixes
