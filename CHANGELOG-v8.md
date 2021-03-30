@@ -3,6 +3,13 @@ List of changes for releases of Translation Manager v8 - for Umbraco.
 
 Detailed release note at https://jumoo.co.uk/translate/release 
 
+## v8.5.3 - 2021-03-30
+
+### Fixes 
+
+- multilingual view button fix
+- macro id fix. 
+
 ## v8.5.2 - 2021-03-10
 
 ### Fixes
