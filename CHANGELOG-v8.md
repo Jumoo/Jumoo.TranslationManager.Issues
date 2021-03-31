@@ -3,6 +3,11 @@ List of changes for releases of Translation Manager v8 - for Umbraco.
 
 Detailed release note at https://jumoo.co.uk/translate/release 
 
+## v8.5.4 - 2021-03-31
+
+### Fixes
+ - [Issue #1](https://github.com/Jumoo/Jumoo.TranslationManager.Issues/issues/1) blank dicrionary/content items causes serialization failure
+
 ## v8.5.3 - 2021-03-30
 
 ### Fixes 
