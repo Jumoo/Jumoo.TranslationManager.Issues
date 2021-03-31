@@ -7,6 +7,7 @@ Detailed release note at https://jumoo.co.uk/translate/release
 
 ### Fixes
  - [Issue #1](https://github.com/Jumoo/Jumoo.TranslationManager.Issues/issues/1) blank dicrionary/content items causes serialization failure
+ - [Issue #2](https://github.com/Jumoo/Jumoo.TranslationManager.Issues/issues/2) "Check github" button points to wrong repo.
 
 ## v8.5.3 - 2021-03-30
 
