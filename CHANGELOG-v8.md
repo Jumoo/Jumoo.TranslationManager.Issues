@@ -11,6 +11,7 @@ Minor release :  _(Reason Missing target checking changes default behavior of cr
  - [#2](https://github.com/Jumoo/Jumoo.TranslationManager.Issues/issues/2) "Check github" button points to wrong repo.
  - [#4](https://github.com/Jumoo/Jumoo.TranslationManager.Issues/issues/4) View button for target doesn't show variant language on loopback
  - [#5](https://github.com/Jumoo/Jumoo.TranslationManager.Issues/issues/5) Save and Publish and Save and Approve buttons don't obey content privileges
+ - [#6](https://github.com/Jumoo/Jumoo.TranslationManager.Issues/issues/5) rouge Licence is correct but not for this domain message
 
 ### Features
  - [#3](https://github.com/Jumoo/Jumoo.TranslationManager.Issues/issues/3) Warn when target nodes cannot be found because pages are not linked
