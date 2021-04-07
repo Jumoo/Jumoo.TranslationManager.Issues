@@ -1,7 +1,7 @@
 # ChangeLog
 List of changes for releases of Translation Manager v8 - for Umbraco.
 
-Detailed release note at https://jumoo.co.uk/translate/release 
+Detailed release note at https://jumoo.co.uk/translate/releases 
 
 ## v8.5.6 - 2021-04-07
 
