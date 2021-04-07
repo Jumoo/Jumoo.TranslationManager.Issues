@@ -3,7 +3,8 @@ List of changes for releases of Translation Manager v8 - for Umbraco.
 
 Detailed release note at https://jumoo.co.uk/translate/releases 
 
-## v8.5.6 - 2021-04-07
+## v8.6.0 - 2021-04-07
+Minor release : _(Reason Missing target checking changes default behavior of creation flow) _
 
 ### Fixes
  - [#1](https://github.com/Jumoo/Jumoo.TranslationManager.Issues/issues/1) blank dicrionary/content items causes serialization failure
