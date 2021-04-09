@@ -3,7 +3,7 @@ List of changes for releases of Translation Manager v8 - for Umbraco.
 
 Detailed release note at https://jumoo.co.uk/translate/releases 
 
-## v8.6.0 - 2021-04-07
+## v8.6.0 - 2021-04-09
 Minor release :  _(Reason Missing target checking changes default behavior of creation flow)_
 
 ### Fixes
