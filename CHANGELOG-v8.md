@@ -3,6 +3,13 @@ List of changes for releases of Translation Manager v8 - for Umbraco.
 
 Detailed release note at https://jumoo.co.uk/translate/releases 
 
+## v8.6.1 - 2021-04-12
+Patch Release: Fix Dictionart permissions check and UI issue.
+
+### Fixes
+ - [#7](https://github.com/Jumoo/Jumoo.TranslationManager.Issues/issues/7) Approving Dictionary items - results in object not found error.
+ - [#8](https://github.com/Jumoo/Jumoo.TranslationManager.Issues/issues/8) User can still see "Save and Review" option when they don't have permissions.
+
 ## v8.6.0 - 2021-04-09
 Minor release :  _(Reason Missing target checking changes default behavior of creation flow)_
 
