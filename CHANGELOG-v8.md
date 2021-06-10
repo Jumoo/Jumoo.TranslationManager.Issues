@@ -3,6 +3,12 @@ List of changes for releases of Translation Manager v8 - for Umbraco.
 
 Detailed release note at https://jumoo.co.uk/translate/releases 
 
+## v8.6.2 - 2021-06-10
+Patch Release - Fix false blank Target report
+
+### Fixes
+ - [#10](https://github.com/Jumoo/Jumoo.TranslationManager.Issues/issues/10) Xliff Target may report as blank if it starts wih or only contains a spanning code.
+
 ## v8.6.1 - 2021-04-12
 Patch Release: Fix Dictionart permissions check and UI issue.
 
