@@ -3,6 +3,21 @@ List of changes for releases of Translation Manager v8 - for Umbraco.
 
 Detailed release note at https://jumoo.co.uk/translate/releases 
 
+## v8.7.1 - 2021-07-15 
+Patch release - fix some blob / regex edge cases 
+
+### Fixes 
+ - [#12](https://github.com/Jumoo/Jumoo.TranslationManager.Issues/issues/12) Media paths incorrect if blob doesn't use VirtualPathProvider
+ - RegEx fix for some properties that don't set path
+ - Improved json detection in multiple list entries. 
+
+## v8.7.0 - 2021-07-07
+Blob storage support release 
+
+ - Support for blob storage when xliff files are saved in media folder
+ - RegEx support for 'properties' element in set config 
+ - custom inline xliff splitting (via config)
+
 ## v8.6.2 - 2021-06-10
 Patch Release - Fix false blank Target report
 
