@@ -3,6 +3,30 @@ List of changes for releases of Translation Manager v8 - for Umbraco.
 
 Detailed release note at https://jumoo.co.uk/translate/releases 
 
+## v8.7.5 - 2021-09-02
+Pathc release Xliff Splitting & Spellings 
+
+- Add extra data to groups when splitting xliff 1.2 groups. (stops loss of class attributes on embedded html markup)
+- typo's and spellings
+- Performance improcement on sort/move operations.
+
+## v8.7.4 - 2021-08-18
+Patch release fixing Json Nested content naming 
+
+- Escape Json in NestedContent Property values (don't store directly as a JSON Object)
+
+## v8.7.3 - 2021-08-13
+Updates to Xliff Splitting and job names 
+
+- Added JobId/JobKey to list of replacements on xliff file name.
+- Fix - Non-media paths not saving/loading (v8.7.2 regression)
+
+## v8.7.2 - 2021-08-05
+Patch release azure media storate fixed
+
+- Fix - preStrip media path if present, so Umbraco Cloud URLs don't have double  media
+- Update xliff 1.2 spitting to split text if its html.
+
 ## v8.7.1 - 2021-07-15 
 Patch release - fix some blob / regex edge cases 
 
