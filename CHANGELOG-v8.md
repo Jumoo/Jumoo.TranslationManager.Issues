@@ -3,7 +3,7 @@ List of changes for releases of Translation Manager v8 - for Umbraco.
 
 Detailed release note at https://jumoo.co.uk/translate/releases 
 
-## 8.7.8 - 2021-11-10
+## v8.7.8 - 2021-11-10
 - option to alter the list of inline and block elements used when splitting html in xliff 1.2 files
 
 ## v8.7.7 - 2021-10-26
