@@ -3,6 +3,18 @@ List of changes for releases of Translation Manager v8 - for Umbraco.
 
 Detailed release note at https://jumoo.co.uk/translate/releases 
 
+## 8.7.8 - 2021-11-10
+- option to alter the list of inline and block elements used when splitting html in xliff 1.2 files
+
+## v8.7.7 - 2021-10-26
+- Anchor tags in Xliff 2.0 contain a empty subType value - when the should not
+- In certain circumstances html `em` tags get treated as xliff 2.0 `em` tags - resulting in some tags not being split in the xliff.
+
+## v8.7.6 - 2021-10-13
+- Fix for "Error one or more nodes could not be created" message - when using a loopback set.
+- Spelling fixes in language file
+- better logging for errors when you attempt to send languages to multiple sets.
+
 ## v8.7.5 - 2021-09-02
 Pathc release Xliff Splitting & Spellings 
 
