@@ -2,6 +2,39 @@
 
 List of changed for Translation Manager v9
 
+# 9.1.0 - 2022-03-25
+Advanced settings release 
+
+ - Improved Xliff connector settings
+ - Improved Google settings
+ - Read in congfig mappings from /config/translation_mappings.config file
+ - Advanced vary by culture controls
+ - Individual licence options for connectors 
+
+# 9.0.5 - 2022-02-22
+Maintaniance release 
+
+ - New DeepL Connector
+ - Speliing fixes
+ - Improved error dialogs
+ - Enhancements to passthrough connector
+ - Fixed pending queue view missing set name
+ - Update avalible Connector page.
+
+# 9.0.4 - 2022-01-07
+Umbraco 9.2 Compatability release 
+
+ - Update Api Methods to ensure still work post 9.2
+
+# 9.0.2 - 2021-12-10 
+Patch for Xliff 
+
+ - Fixes: Xliff writing empty subtype values in anchor
+ - Fixes: Detection of Xliff EM vs HTML EM tags
+ - Update: Content App shows latest version on loopback
+ - Fixes: drop requirement for Xliff Metadata to contain Id
+ - Fixes: Background job processing in Umbraco 9
+
 # 9.0.1 - 2021-10-04
 Patch release for Linux support 
 
