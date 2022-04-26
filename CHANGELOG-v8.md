@@ -3,6 +3,10 @@ List of changes for releases of Translation Manager v8 - for Umbraco.
 
 Detailed release note at https://jumoo.co.uk/translate/releases 
 
+## v8.7.9 - 2021-01-10 
+- Ignore metadata with it doesn't have an ID value
+- Json fixes for doctypegrideditor values
+
 ## v8.7.8 - 2021-11-10
 - option to alter the list of inline and block elements used when splitting html in xliff 1.2 files
 
