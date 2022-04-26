@@ -2,6 +2,16 @@
 
 List of changed for Translation Manager v9
 
+# 9.1.1 - 2022-04-26
+Patch release
+
+ - Fix file locking on xliff connector uploads
+ - Fix spanningcode not treated as empty
+ - Fix no error messsage in red bar for some xliff errors
+ - Add ability to turn off notifications
+ - Use content version on variants
+ - Add config to xliff provider for blank targets
+
 # 9.1.0 - 2022-03-25
 Advanced settings release 
 
