@@ -2,6 +2,24 @@
 
 List of changed for Translation Manager v9
 
+# 9.1.4 - 2022-06-30 
+
+ - Fix downloading xliff files fails (netcore) when path is outside wwwroot
+
+# 9.1.3 - 2022-05-25
+
+ - Fix issues with path values when backoffice is in swedish (-1 isn't a number)
+
+# 9.1.2 - 2022-04-27
+Patch release
+
+ - Fix: File locking when uploading an XLIFF file to a non-media folder location
+ - Fix: Ensure spanning code only xliff is not treated as blank when checking targets
+ - Fix: No error message for some upload errors.
+ - Feature: Add Ability to globally disable notifications
+ - Feature: Use content version when re-importing loopback translation content
+ - Feature: Add config options for how to generate <target> nodes on xliff- 
+
 # 9.1.1 - 2022-04-26
 Patch release
 
