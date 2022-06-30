@@ -3,6 +3,15 @@ List of changes for releases of Translation Manager v8 - for Umbraco.
 
 Detailed release note at https://jumoo.co.uk/translate/releases 
 
+## v8.7.10 - 2022-04-27
+ - Fix: Provider settings values return false when they are blank
+ - Fix: Allow Passthrough provider to not change values when they already exist on target
+ - Fix: Improve the error logging if a file upload files in the XLIFF provider #31
+ - Fix: Improves xliff error checking / display #31
+ - Fix: Elements containing only spanning codes are treated as blank values when they are not #27
+ - Fix: Track version number when using loopback sets
+ - Fix: Ensure 'title' attributes are split out of translation correctly when embedded in RTE/Grid element
+
 ## v8.7.9 - 2021-01-10 
 - Ignore metadata with it doesn't have an ID value
 - Json fixes for doctypegrideditor values
