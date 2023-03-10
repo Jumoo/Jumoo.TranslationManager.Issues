@@ -3,6 +3,9 @@ List of changes for releases of Translation Manager v8 - for Umbraco.
 
 Detailed release note at https://jumoo.co.uk/translate/releases 
 
+## 8.7.11 - 2023-03-01 
+ - Fix: For multiple multivariant source/target sets sharing source and target nodes (not recommended - but works)
+
 ## v8.7.10 - 2022-04-27
  - Fix: Provider settings values return false when they are blank
  - Fix: Allow Passthrough provider to not change values when they already exist on target
