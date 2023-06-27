@@ -4,6 +4,8 @@ List of changes for releases of Translation Manager v11 - for Umbraco.
 
 Detailed release note at https://jumoo.co.uk/translate/releases
 
+**For v11.2 + releases [see the shared change log](CHANGELOG-v10-12-SHARED)**
+
 # v11.0.2 - 2023-01-12 
 
 - Fix - XLIFF2.0 - self closing span elements should not have a blank subtype vaues
