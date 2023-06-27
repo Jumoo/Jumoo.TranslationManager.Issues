@@ -4,7 +4,7 @@ List of changes for releases of Translation Manager v11 - for Umbraco.
 
 Detailed release note at https://jumoo.co.uk/translate/releases
 
-**For v11.2 + releases [see the shared change log](CHANGELOG-v10-12-SHARED)**
+**For v11.2 + releases [see the shared change log](CHANGELOG-v10-12-SHARED.md)**
 
 # v11.0.2 - 2023-01-12 
 
