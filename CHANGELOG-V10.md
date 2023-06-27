@@ -4,6 +4,8 @@ This is the change log for Translation Manager v10
 
 Detailed release note at https://jumoo.co.uk/translate/releases
 
+**For v10.2 + releases [see the shared change log](CHANGELOG-v10-12-SHARED)**
+
 # 10.1.4 - 2023-01-12 
 
 - Fix for Autoapprove locking issues
