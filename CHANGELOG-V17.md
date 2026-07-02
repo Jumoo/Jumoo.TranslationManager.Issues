@@ -2,6 +2,14 @@
 
 All notable changes to Translation Manager for Umbraco v17, by release tag.
 
+## 17.5.1 (`release/v17.5.1`)
+
+Fixes to the block editor (block list/grid) translation merge, following on from 17.5.0.
+
+- Fix: source (untranslated) text ending up in blocks instead of the translated value, caused by an inverted loopback/variance check when resolving a block's target value
+- Fix: orphaned block layout entries left behind after a block is dropped from the translated content, which showed as a "missing block" in the UI
+- Fix: block content merge could return `null` from a redundant double-merge pass
+
 ## 17.5.0 (`release/v17.5.0`)
 
 Background processing reliability: migrate to Umbraco's recurring background job framework and fix the scope-corruption errors seen during processing.
