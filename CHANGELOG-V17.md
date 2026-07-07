@@ -2,6 +2,13 @@
 
 All notable changes to Translation Manager for Umbraco v17, by release tag.
 
+## 17.5.2 (`release/v17.5.2`)
+
+Batch translation memory fix and a connector dependency bump.
+
+- Fix: batch translation memory sometimes incorrectly marked a section as coming from translation memory when it wasn't
+- Build: update Microsoft connector dependency
+
 ## 17.5.1 (`release/v17.5.1`)
 
 Fixes to the block editor (block list/grid) translation merge, following on from 17.5.0.
