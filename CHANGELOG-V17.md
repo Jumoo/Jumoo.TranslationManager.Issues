@@ -2,6 +2,12 @@
 
 All notable changes to Translation Manager for Umbraco v17, by release tag.
 
+## 17.5.3 (`release/v17.5.3`)
+
+Fix a duplicate custom-element registration that could appear after upgrading, caused by the backoffice client being loaded twice from browser cache.
+
+- Fix: align the `@jumoo/translate` import-map entry with the versioned backoffice entrypoint URL, so a stale cached copy can no longer load alongside the fresh build and register custom elements twice (e.g. `jumoo-tm-settings-connector-menu has already been used with this registry`)
+
 ## 17.5.2 (`release/v17.5.2`)
 
 Batch translation memory fix and a connector dependency bump.
