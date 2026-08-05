@@ -2,6 +2,18 @@
 
 All notable changes to Translation Manager for Umbraco v17, by release tag.
 
+## 17.7.0 (`release/v17.7.0`)
+
+A set's default connector can now be a starting point rather than the only choice.
+
+- Add: "Lock connector" option next to a set's default connector. When unticked, editors see the connector dropdown in the create-job dialog pre-selected on the set default, and can pick any other active connector. Ticked (the default for existing sets) keeps the current behaviour of forcing the set's connector
+
+## 17.6.0 (`release/v17.6.0`)
+
+Rich text editing for HTML translation values.
+
+- Add: edit HTML (rich text) translation values in a Tiptap editor instead of a raw-markup textarea, with basic formatting (bold, italic, headings, lists) and a source-view button for markup the toolbar doesn't cover — no blocks, images, or media embedding
+
 ## 17.5.3 (`release/v17.5.3`)
 
 Fix a duplicate custom-element registration that could appear after upgrading, caused by the backoffice client being loaded twice from browser cache.
