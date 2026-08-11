@@ -2,6 +2,17 @@
 
 All notable changes to Translation Manager for Umbraco v18, by release tag.
 
+## 18.1.0 (`release/v18.1.0`)
+
+Granular translation permissions, an editable rich-text HTML view, and set-level connector locking.
+
+- Feat: split "publish" out of the existing translation-approve permission, so a translator can be given approve rights without also being able to publish the result back to the site
+- Fix: mutating job/node/set/memory/connector endpoints previously only required generic backoffice access — they now require the appropriate translation permission. **Behaviour change on upgrade:** a group holding only `jumoo-send-to-translation` can no longer archive, remove or reset jobs, or edit sets
+- Feat: edit HTML (`htmlControl`) translation values with a Tiptap rich text editor instead of a raw-markup textarea
+- Feat: "Lock connector" option on translation sets — a set's default connector is now a starting point rather than the only option; tick "Lock connector" to keep the old forced/read-only behaviour (existing sets default to locked, so behaviour is unchanged until someone opts out)
+- Fix: approved node memories were incorrectly deleted in some cases
+- Build: bump the Xliff connector dependency to 18.0.1; other bundled connectors remain at 18.0.0
+
 ## 18.0.1 (`release/v18.0.1`)
 
 Fix a duplicate custom-element registration that could appear after upgrading, caused by the backoffice client being loaded twice from browser cache.
