@@ -4,9 +4,12 @@ All notable changes to Translation Manager for Umbraco v17, by release tag.
 
 ## 17.7.0 (`release/v17.7.0`)
 
-A set's default connector can now be a starting point rather than the only choice.
+Granular translation permissions, connector flexibility, and a security fix for the API endpoints.
 
+- Add: split "approve" (put translated content back as a save) from "publish" (publish it once back) into two separate grantable permissions, so a third party can be given translation work without being able to publish (issue #101). Existing groups that could already manage translations are given both permissions automatically on upgrade, so no one loses access
+- Fix: mutating API endpoints (job archive/remove/reset/bulk actions, node deletion and property edits, set save/copy/delete, memory delete, connector settings) previously had no translation-permission check at all, callable by any authenticated backoffice user; they now require the manage-translations permission
 - Add: "Lock connector" option next to a set's default connector. When unticked, editors see the connector dropdown in the create-job dialog pre-selected on the set default, and can pick any other active connector. Ticked (the default for existing sets) keeps the current behaviour of forcing the set's connector
+- Build: update connector and dependency package versions (Microsoft, Xliff, Jumoo.TranslationManager.AI, Jumoo.Processing, Jumoo.Json)
 
 ## 17.6.0 (`release/v17.6.0`)
 
