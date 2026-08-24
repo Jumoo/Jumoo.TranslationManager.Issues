@@ -2,6 +2,22 @@
 
 All notable changes to Translation Manager for Umbraco v17, by release tag.
 
+## 17.7.2 (`release/v17.7.2`)
+
+Translation memory correctness fixes, job-creation validation, clearer error reporting, and a log-noise fix.
+
+- Fix: approved translation memory could silently revert to pending when shared source text was re-translated by another node, and editing a single value on a node deleted translation memory for every other property on that node; node approval also failed to promote memory for shared text owned by a different node's reference
+- Fix: the choose-provider step in job creation didn't validate connector selection before enabling Next, so clicking Next while the connector was still resolving (e.g. a set with no default connector) could save a job with no provider set
+- Fix: checking a job manually could show two notifications — a generic one and a warning that lost the actual server-side detail; now a single warning uses the real error title/detail from the API, and the same error is also shown as a persistent box on the job page until a successful check or navigation away
+- Fix: demote benign "no translation set applies to this save" cases (invariant doctypes, culture-only saves) from a warning back to debug logging, and stop scanning for dirty cultures on doctypes that don't vary by culture, to stop log flooding
+- Build: update connector dependency versions (Microsoft, Jumoo.TranslationManager.AI)
+
+## 17.7.1 (`release/v17.7.1`)
+
+Fix a rich text property crash caused by empty markup round-tripping as `null`.
+
+- Fix: an RTE property with empty markup (e.g. a block-only rich text value) could come back from translation as `{"markup": null, "blocks": ...}` instead of `{"markup": "", "blocks": ...}`, which made the node unopenable in the backoffice with `ArgumentNullException: Value cannot be null. (Parameter 'input')` from `RichTextPropertyValueEditor.ToEditor`
+
 ## 17.7.0 (`release/v17.7.0`)
 
 Granular translation permissions, connector flexibility, and a security fix for the API endpoints.
