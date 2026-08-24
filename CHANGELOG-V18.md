@@ -2,6 +2,22 @@
 
 All notable changes to Translation Manager for Umbraco v18, by release tag.
 
+## 18.1.2 (`release/v18.1.2`)
+
+Translation memory correctness fixes, a job-cancel crash guard, and a provider-selection validation fix.
+
+- Fix: approved translation memory could silently revert to pending when shared source text was re-translated by another node, and editing a single value on a node incorrectly deleted memory for every other property on that node; approval is now monotonic and edit-invalidation only removes memory rows that no longer match the node's current source text
+- Fix: guard against a `NullReferenceException` in `TranslationJobService.Cancel` and `MachineConnectorBase.SubmitInternal` when acting on a job whose `Nodes` collection isn't loaded; cancel now self-heals by reloading nodes from the database
+- Fix: the choose-provider step could let job creation proceed before an async default-connector resolution finished, saving a job with no `providerKey` when a set has no default connector
+- Fix: stop log flooding from benign no-set-match cases during node creation on invariant doctypes and culture-only saves
+- Build: bump `Jumoo.TranslationManager.Microsoft` to 18.1.0, `Jumoo.TranslationManager.AI` to 18.1.1, and `Jumoo.Processing` to 18.1.0
+
+## 18.1.1 (`release/v18.1.1`)
+
+Fix a rich text property crash caused by empty markup round-tripping as `null`.
+
+- Fix: an RTE property with empty markup (e.g. a block-only rich text value) could come back from translation as `{"markup": null, "blocks": ...}` instead of `{"markup": "", "blocks": ...}`, which made the node unopenable in the backoffice
+
 ## 18.1.0 (`release/v18.1.0`)
 
 Translate in place, granular translation permissions, an editable rich-text HTML view, and set-level connector locking.
