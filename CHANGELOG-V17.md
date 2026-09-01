@@ -4,10 +4,10 @@ All notable changes to Translation Manager for Umbraco v17, by release tag.
 
 ## 17.8.0 (`v17.8.0`)
 
-Bulk multi-node translation jobs from the Content section, and access-level aware connector settings.
+Bulk multi-node translation jobs from the Content section, and a connector settings tidy-up.
 
 - Add: bulk translation dashboard in the Content section — pick multiple content items with the standard document tree picker, review what's selected (name/path, translation set, include-children), and send them into a single translation job; the job-creation config step now lists the content items being sent when more than one is involved
-- Add: connector settings lookups now respect the current user's Settings-section access — job creation/listing endpoints request only partial (non-sensitive) provider options by default, full detail is only resolved where the user's real access level matters; the two now-unused `ProviderSettingsController` GET endpoints are marked obsolete for removal in v20
+- Improve: connector settings lookups, including marking the unused `ProviderSettingsController` GET endpoints obsolete for removal in v20
 - Build: restore, pack, and push each release package individually instead of one whole-solution build/push, so a connector package that isn't published yet only fails that one package instead of blocking the rest
 - Build: update connector dependency versions
 
