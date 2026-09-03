@@ -2,6 +2,14 @@
 
 All notable changes to Translation Manager for Umbraco v17, by release tag.
 
+## 17.8.1 (`v17.8.1`)
+
+Fixes an install problem some sites hit on 17.8.0, plus a first-install translation set guess and a connector-selection fix.
+
+- Fix: 17.8.0's core package pulled in a set of unused ASP.NET Core dependencies it didn't need, which broke installation on some sites. Our build pipeline now pins an exact .NET SDK version and verifies its full dependency graph on every build, so this class of problem can't recur unnoticed
+- Add: on a fresh install with no translation set configured yet, Translation Manager now guesses and selects a starter set automatically
+- Fix: the create-job dialog now auto-selects the connector when a translation set has only one available, instead of leaving it unselected
+
 ## 17.8.0 (`v17.8.0`)
 
 Bulk multi-node translation jobs from the Content section, and a connector settings tidy-up.
