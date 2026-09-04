@@ -2,6 +2,23 @@
 
 All notable changes to Translation Manager for Umbraco v18, by release tag.
 
+## 18.2.1 (`v18.2.1`)
+
+Fixes carried forward from the v17 line: a first-install translation set guess, a connector auto-select fix, and a licence-check identification header.
+
+- Fix: 18.2.0's build could pull in unused ASP.NET Core dependencies that broke installation on some sites; the build pipeline now pins an exact .NET SDK version and verifies its full dependency graph on every release, so this can't recur unnoticed
+- Add: on a fresh install with no translation set configured yet, Translation Manager now guesses and selects a starter set automatically
+- Fix: the create-job dialog now auto-selects the connector when a translation set has only one available, instead of leaving it unselected (fixes #94)
+- Fix: licence check requests now identify themselves with a Translation Manager user agent header instead of .NET's default
+
+## 18.2.0 (`v18.2.0`)
+
+A bulk translation dashboard for the Content section, and access-level aware connector settings.
+
+- Add: bulk translation dashboard in the Content section — pick a page tree and language, review what's pending, and send it all to translation in one go
+- Improve: connector settings lookups now respect the current user's Settings-section access, so job creation only requests the detail it actually needs
+- Fix: a manual job check failure now shows one clear error instead of a generic message
+
 ## 18.1.2 (`release/v18.1.2`)
 
 Translation memory correctness fixes, a job-cancel crash guard, and a provider-selection validation fix.
