@@ -2,6 +2,14 @@
 
 All notable changes to Translation Manager for Umbraco v17, by release tag.
 
+## 17.8.2 (`v17.8.2`)
+
+A clone-to-language action, and a fix for sites also running uSync.Complete.
+
+- Add: for a language with no translation yet, clone the content you're currently viewing straight into it, skipping the translation job pipeline entirely — the same one-click clone action from v13, now in the v17 backoffice
+- Fix: installing Translation Manager alongside uSync.Complete 17.4.0 could produce a `400 - Read unrecognized type discriminator id 'TranslationProcessingOptions'` error on translation requests. Both packages share an underlying dependency, and a version mismatch between them was the cause — now resolved
+- Fix: the licence check requests Translation Manager makes now identify themselves properly, matching uSync.Complete's behaviour
+
 ## 17.8.1 (`v17.8.1`)
 
 Fixes an install problem some sites hit on 17.8.0, plus a first-install translation set guess and a connector-selection fix.
