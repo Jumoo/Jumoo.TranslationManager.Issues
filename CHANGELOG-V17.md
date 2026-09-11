@@ -2,6 +2,42 @@
 
 All notable changes to Translation Manager for Umbraco v17, by release tag.
 
+## 17.9.0 (`v17.9.0`)
+
+A glossary for consistent terminology, granular Translation Memory permissions, and a
+round of translation-correctness fixes.
+
+- Add: Glossary — a global list of terminology, managed from its own item in the
+  Translations section. Add terms with a value (or a "do not translate" flag) per
+  installed language, and import/export as CSV (one language pair at a time — a
+  worksheet a translator can fill in) or TBX across every language at once, for
+  termbases exported from another tool. The glossary section only appears once a
+  connector that reads it is configured — right now that's the AI connector; DeepL,
+  Google and Microsoft glossary support is still on the way
+- Add: two new granular permissions, "View glossary" and "View translation memory" — a
+  user needs both translation-section access and the specific permission to see either.
+  Administrators get both automatically on upgrade; any other group that wants them
+  needs to be granted explicitly. As with any permission change, it only reaches an
+  already-signed-in session at their next sign-in
+- Improve: Translation Memory moved from Settings into the Translations section,
+  alongside Glossary, with its own on/off toggle and item counts on the dashboard
+- Fix: creating a translation could get stuck with an unhelpful internal error if you
+  pressed Create before choosing a connector — the button now stays disabled until one's
+  selected
+- Fix: a batch job that came back only partly translated (some content pre-filled from
+  translation memory, the rest still out with the provider) could get stuck showing as
+  fully reviewed with no way to check the rest back in
+- Fix: content with nothing translatable (every page unpublished, or nothing to
+  translate at all) used to produce a hollow, confusing job, or fail outright — it now
+  completes cleanly and says "Nothing to translate"
+- Fix: a translation set with "Hide version choice" ticked silently defaulted new jobs to
+  published-only content; new jobs now default to the latest content regardless
+- Fix: job submission could fail with "Failed to submit job" if certain internal data had
+  been stored as an empty string rather than blank
+- Build: the AI connector (`17.6.0`) adds retry-on-failure for transient errors, a
+  redesigned Prompt Builder, Fast/Balanced/Quality presets per translator, and support
+  for the new glossary
+
 ## 17.8.2 (`v17.8.2`)
 
 A clone-to-language action, and a fix for sites also running uSync.Complete.
