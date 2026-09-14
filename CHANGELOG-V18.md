@@ -2,6 +2,18 @@
 
 All notable changes to Translation Manager for Umbraco v18, by release tag.
 
+## 18.3.0 (`v18.3.0`)
+
+A global Glossary for keeping terminology consistent across translations, granular permissions for Glossary and Translation Memory, and a round of reliability fixes.
+
+- Add: Glossary — a global list of terminology you control per language pair, importable/exportable as CSV, so translations use your preferred wording instead of the connector's own choice
+- Add: `jumoo-view-glossary` and `jumoo-view-translation-memory` permissions, so access to these areas can be granted independently of general backoffice access
+- Fix: a partially-approved translation job could show the wrong status, or let a node be approved before it was actually ready
+- Fix: jobs with nothing left to translate now show a normal "nothing to do" message instead of an error
+- Fix: the create-job dialog now requires a connector to be selected before you can continue
+- Fix: duplicate labels on the glossary on/off toggles
+- Improve: translation requests now retry only on genuine transient network failures, reducing unnecessary retries
+
 ## 18.2.1 (`v18.2.1`)
 
 Fixes carried forward from the v17 line: a first-install translation set guess, a connector auto-select fix, and a licence-check identification header.
