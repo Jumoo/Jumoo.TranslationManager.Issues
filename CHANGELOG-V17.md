@@ -2,6 +2,20 @@
 
 All notable changes to Translation Manager for Umbraco v17, by release tag.
 
+## 17.9.1 (`v17.9.1`)
+
+A performance fix for large multi-site, multi-culture installs.
+
+- Fix: browsing the content tree in the backoffice could make the site progressively
+  slower over the course of a day — sometimes badly enough to freeze the backoffice and
+  lose editor work — on a site with a translation set spanning several sites and
+  cultures. Each node loaded in the tree triggered a lookup whose response kept growing,
+  because a duplicate site entry was being added to that set's cached data every time and
+  never cleared. Reported to us directly by a customer running a large multi-language
+  site; fixed by comparing against the right culture when checking whether an entry
+  already existed, and by making sure that kind of per-request lookup can no longer write
+  back into the shared cache at all, regardless of what changes there in future
+
 ## 17.9.0 (`v17.9.0`)
 
 A glossary for consistent terminology, granular Translation Memory permissions, and a
