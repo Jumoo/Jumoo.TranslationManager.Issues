@@ -2,6 +2,21 @@
 
 All notable changes to Translation Manager for Umbraco v17, by release tag.
 
+## 17.9.2 (`v17.9.2`)
+
+A follow-up to the website-only boot fix in 17.9.1 — that fix was incomplete, and a site
+running without the Umbraco backoffice (a delivery-only/website tier, common in
+load-balanced setups) could still fail to start.
+
+- Fix: on a website-only boot, several parts of Translation Manager (the link updater,
+  the property copier, and Xliff file handling) still tried to register services that
+  depend on the backoffice, and Umbraco's own health-check discovery found Translation
+  Manager's health checks regardless of any of our own checks. Both are now skipped
+  correctly, so a website-only site starts cleanly
+- Build: this package now ships with a matching, current version of its Xliff
+  serialization component rather than an older one pulled in indirectly through a
+  connector
+
 ## 17.9.1 (`v17.9.1`)
 
 A performance fix for large multi-site, multi-culture installs.
