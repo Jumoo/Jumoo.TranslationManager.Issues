@@ -2,6 +2,34 @@
 
 All notable changes to Translation Manager for Umbraco v17, by release tag.
 
+## 17.9.3 (`v17.9.3`)
+
+A bug-fix release. If you publish translations on culture-variant pages that use blocks,
+or run a custom connector, we recommend upgrading.
+
+- Fix: on a fresh install, approving and publishing a translation could fail with "You
+  do not have publish permissions for one or more target node", even for an
+  administrator, until the site was restarted. The new approval permissions now take
+  effect straight away, on every server in a load-balanced setup
+- Fix: after publishing a translation of a culture-variant page that contains a Block
+  List (or a rich text editor with blocks), the default language could stay flagged as
+  having unpublished changes. Translated block content is now saved exactly as Umbraco
+  saves it on publish. One case remains: a rich text editor that doesn't vary by culture
+  but contains blocks that do can still show pending changes, because of how Umbraco
+  itself orders those values on publish
+- Fix: a custom connector that imports translations directly, rather than through the
+  backoffice, stopped saving them to Umbraco in 17.9.0. It works as it did in 17.8
+  again, and the backoffice still won't let you approve pages that are waiting on a
+  translation
+- Fix: the pending items list now shows the most recently updated items first, so an
+  item you've just re-triggered moves back to the top rather than staying buried under
+  newer ones ([#84](https://github.com/Jumoo/Jumoo.TranslationManager.Issues/issues/84))
+- Fix: in a translation job, selecting every item on the current page is now a "Select
+  page" button next to "Select All" and "Clear Selection", and "Select All" makes clear
+  that it selects items on every page of the job
+- Build: the `@jumoo/translate` npm package (for developers building backoffice
+  extensions) now comes from npmjs.org, and its version matches the NuGet package
+
 ## 17.9.2 (`v17.9.2`)
 
 A follow-up to the website-only boot fix in 17.9.1 — that fix was incomplete, and a site
