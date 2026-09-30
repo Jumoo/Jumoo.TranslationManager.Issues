@@ -2,6 +2,20 @@
 
 All notable changes to Translation Manager for Umbraco v18, by release tag.
 
+## 18.3.2 (`v18.3.2`)
+
+A bug-fix release, bringing the fixes from 17.9.2 and 17.9.3 to the v18 line. If you run a website-only (delivery) tier, publish translations on culture-variant pages that use blocks, use a custom connector, or run Translation Manager alongside uSync.Complete, we recommend upgrading.
+
+- Fix: on a website-only boot (a site running without the Umbraco backoffice, common in load-balanced setups), several parts of Translation Manager (the link updater, the property copier, and Xliff file handling) still tried to register services that depend on the backoffice, and Umbraco's own health-check discovery found Translation Manager's health checks regardless of our own checks. Both are now skipped correctly, so a website-only site starts cleanly
+- Fix: on a fresh install, approving and publishing a translation could fail with "You do not have publish permissions for one or more target node", even for an administrator, until the site was restarted. The new approval permissions now take effect straight away, on every server in a load-balanced setup
+- Fix: after publishing a translation of a culture-variant page that contains a Block List (or a rich text editor with blocks), the default language could stay flagged as having unpublished changes. Translated block content is now saved exactly as Umbraco saves it on publish. One case remains: a rich text editor that doesn't vary by culture but contains blocks that do can still show pending changes, because of how Umbraco itself orders those values on publish
+- Fix: a custom connector that imports translations directly, rather than through the backoffice, stopped saving them to Umbraco in 18.3.0. It works as it did before again, and the backoffice still won't let you approve pages that are waiting on a translation
+- Fix: saving translation processing settings could fail with a 400 error ("unrecognized type discriminator id") when Translation Manager is installed alongside another Jumoo package, such as uSync.Complete, that uses a different version of the shared processing library. Existing settings carry on working unchanged
+- Fix: the pending items list now shows the most recently updated items first, so an item you've just re-triggered moves back to the top rather than staying buried under newer ones ([#84](https://github.com/Jumoo/Jumoo.TranslationManager.Issues/issues/84))
+- Fix: in a translation job, selecting every item on the current page is now a "Select page" button next to "Select All" and "Clear Selection", and "Select All" makes clear that it selects items on every page of the job
+- Build: this package now ships with a matching, current version of its Xliff serialization component rather than an older one pulled in indirectly through a connector
+- Build: the `@jumoo/translate` npm package (for developers building backoffice extensions) now comes from npmjs.org, and its version matches the NuGet package
+
 ## 18.3.1 (`v18.3.1`)
 
 A performance fix for large multi-site, multi-culture installs.
