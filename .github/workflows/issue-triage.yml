@@ -10,8 +10,10 @@ name: Issue Triage
 # never writes to the issue itself, and none of its free text is posted.
 
 on:
-  issues:
-    types: [opened]
+  # DISABLED 2026-10-07: the automatic trigger is switched off until the first dry runs
+  # pass. Restore these two lines to turn it back on.
+  # issues:
+  #   types: [opened]
   # Run by hand against an existing issue, to test a change or re-triage one. A manual
   # run is a dry run unless you untick the box: it works everything out and writes what
   # it would have done to the run summary, without touching the issue.
