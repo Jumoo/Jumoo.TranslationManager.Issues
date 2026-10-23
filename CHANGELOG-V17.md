@@ -2,6 +2,46 @@
 
 All notable changes to Translation Manager for Umbraco v17, by release tag.
 
+## 17.9.4 (`v17.9.4`)
+
+A bug-fix release with two new approval options. If you translate culture-variant pages
+with nested blocks, we recommend upgrading. If you run a custom connector that approves
+translations itself, read the note about failed saves below before you upgrade.
+
+- Fix: a block containing a nested Block List that varies by language (or a rich text
+  editor with blocks that varies by language), on a culture-variant page, wasn't fully
+  translated. The items inside the nested list weren't sent for translation, and in
+  17.9.x they were also hidden in the translated language, so they didn't show on the
+  page. They're now translated and shown like the rest of the block
+- Fix: on a site upgraded from an older version, a property could be sent to
+  translation twice, for example as two identical segments in an XLIFF file. Affected
+  items correct themselves the next time they're updated
+  ([#87](https://github.com/Jumoo/Jumoo.TranslationManager.Issues/issues/87))
+- Fix: dates in the backoffice, such as in a job's list of items, were shown in UTC
+  rather than your own time zone (an hour behind during British Summer Time, for
+  example). They now show local time
+- Fix: with background approval switched on, approving with "Approve in Background"
+  ticked left the approval dialog blank. It now shows the progress and the results. The
+  approval itself always worked
+- Add: a "Save only (do not publish)" option under "Automatic approval" in a translation
+  set's processing options. With it on, automatically approved translations are saved
+  as drafts rather than published, so someone can check them before they go live
+- Add: a `Translation:ContinueOnApprovalError` setting (in appsettings, off by default).
+  With it on, approving a job skips any item that fails to save or publish, notes the
+  reason in the job history, and carries on with the rest. The approval results then
+  list the skipped items, so only those need approving again
+  ([#81](https://github.com/Jumoo/Jumoo.TranslationManager.Issues/issues/81))
+- Change: a save or publish that fails quietly - cancelled by a notification handler,
+  the target's parent not being published in that language, or invalid content - now
+  counts as a failed approval. Before, the item was marked Approved even though nothing
+  was published. With the setting above off, the approval stops and gives the reason.
+  **Custom connectors that approve translations themselves** now get an error in this
+  case, where it used to pass silently
+- Change: the job-level "approved" and "published" events and history entries now
+  happen once every item in the job is approved, not for each page of a paged approval
+- Build: updates the shared Jumoo.Processing library to 17.4.2. If you also have
+  uSync.Complete installed, it may need updating to its latest v17 release too
+
 ## 17.9.3 (`v17.9.3`)
 
 A bug-fix release. If you publish translations on culture-variant pages that use blocks,
