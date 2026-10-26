@@ -2,6 +2,28 @@
 
 All notable changes to Translation Manager for Umbraco v18, by release tag.
 
+## 18.4.0 (`v18.4.0`)
+
+Brings the fixes and new approval options from 17.9.4 and 17.10.0 to the v18 line. If you use a separate content tree for each language, translate culture-variant pages with nested blocks, or want more control over what happens when an approval fails, we recommend upgrading. This release moves to Jumoo.Processing 18.3, so if you also run uSync.Complete, update that to its latest v18 release at the same time. If you run a custom connector that approves translations itself, read the note about failed saves below before you upgrade.
+
+- Fix: on sites with a separate content tree for each language, links in rich text and Multi URL Picker properties on a translated page kept pointing at the pages in the main site after approval. They now point at the matching page in the translated site ([#108](https://github.com/Jumoo/Jumoo.TranslationManager.Issues/issues/108))
+- Fix: links to content in rich text are now updated on the translated site when the link is written in a slightly different form (an upper case id, or url encoded), matching how Umbraco itself reads them
+- Fix: links are kept when a translator edits a value in Translation Manager's rich text editor, which now has link and unlink buttons
+- Fix: a block containing a nested Block List that varies by language (or a rich text editor with blocks that varies by language), on a culture-variant page, wasn't fully translated. The items inside the nested list weren't sent for translation and were hidden in the translated language. They're now translated and shown like the rest of the block
+- Fix: translating a block property that varies by language no longer leaves the original language's values in the translated page, where they could show up as untranslated text if the block's element type was later changed to not vary
+- Fix: on a site upgraded from an older version, a property could be sent to translation twice, for example as two identical segments in an XLIFF file. Affected items correct themselves the next time they're updated ([#87](https://github.com/Jumoo/Jumoo.TranslationManager.Issues/issues/87))
+- Fix: dates in the backoffice, such as in a job's list of items, were shown in UTC rather than your own time zone. They now show local time
+- Fix: with background approval switched on, approving with "Approve in Background" ticked left the approval dialog blank. It now shows the progress and the results
+- Fix: background translation tasks that fail or are cancelled now show the error, instead of "Processing in background" forever
+- Fix: on a new install where another package publishes content as the site starts (for example a uSync import at startup), Translation Manager no longer logs database errors for each item
+- Add: a "Save only (do not publish)" option under "Automatic approval" in a translation set's processing options. With it on, automatically approved translations are saved as drafts rather than published, so someone can check them before they go live
+- Add: a `Translation:ContinueOnApprovalError` setting (in appsettings, off by default). With it on, approving a job skips any item that fails to save or publish, notes the reason in the job history, and carries on with the rest. The approval results then list the skipped items, so only those need approving again ([#81](https://github.com/Jumoo/Jumoo.TranslationManager.Issues/issues/81))
+- Change: a save or publish that fails quietly - cancelled by a notification handler, the target's parent not being published in that language, or invalid content - now counts as a failed approval, with the reason in the job history, instead of the item being marked as approved when nothing was published. **If you run a custom connector that approves translations itself**, a failure that used to pass silently now stops the approval, unless `Translation:ContinueOnApprovalError` is on
+- Change: the job's "approved" and "published" notifications and history entries now happen once every item on the job is approved, rather than for each page of a paged approval
+- Add: on Umbraco 18.3 and later, a separator sits above Translation Manager's actions in the content actions menu
+- Change: the link updater writes a debug log line for each link it updates, and says why when it leaves one unchanged, so link problems are easier to track down
+- Update: Jumoo.Processing is now 18.3.0
+
 ## 18.3.2 (`v18.3.2`)
 
 A bug-fix release, bringing the fixes from 17.9.2 and 17.9.3 to the v18 line. If you run a website-only (delivery) tier, publish translations on culture-variant pages that use blocks, use a custom connector, or run Translation Manager alongside uSync.Complete, we recommend upgrading.
