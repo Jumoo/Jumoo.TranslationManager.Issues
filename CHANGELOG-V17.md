@@ -2,6 +2,36 @@
 
 All notable changes to Translation Manager for Umbraco v17, by release tag.
 
+## 17.10.0 (`v17.10.0`)
+
+Bug fixes and Umbraco 17.8 readiness. If you use separate content trees for each
+language, or links in rich text, we recommend upgrading. This release moves to
+Jumoo.Processing 17.5, so if you also run uSync.Complete, update that to its latest v17
+release at the same time.
+
+- Fix: on sites with a separate content tree for each language, links in rich text and
+  Multi URL Picker properties on a translated page kept pointing at the pages in the
+  main site after approval. They now point at the matching page in the translated site
+  ([#108](https://github.com/Jumoo/Jumoo.TranslationManager.Issues/issues/108))
+- Fix: links to content in rich text are now updated on the translated site when the
+  link is written in a slightly different form (an upper case id, or url encoded),
+  matching how Umbraco itself reads them
+- Fix: links are kept when a translator edits a value in Translation Manager's rich
+  text editor, which now has link and unlink buttons
+- Fix: translating a block property that varies by language no longer leaves the
+  original language's values in the translated page, where they could show up as
+  untranslated text if the block's element type was later changed to not vary
+- Fix: on a new install where another package publishes content as the site starts
+  (for example a uSync import at startup), Translation Manager no longer logs database
+  errors for each item
+- Fix: background translation tasks that fail or are cancelled now show the error,
+  instead of "Processing in background" forever
+- Add: on Umbraco 17.8 and later, a separator sits above Translation Manager's actions
+  in the content actions menu
+- Change: the link updater writes a debug log line for each link it updates, and says
+  why when it leaves one unchanged, so link problems are easier to track down
+- Update: the bundled DeepL connector is now 17.4.0, and Jumoo.Processing is 17.5.0
+
 ## 17.9.4 (`v17.9.4`)
 
 A bug-fix release with two new approval options. If you translate culture-variant pages
